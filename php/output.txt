@@ -1,0 +1,1 @@
+INSERT INTO Empleado (idEmpleado,nombre,apPaterno,apMaterno,NSS,email,telefono,password) VALUES ('adavilag0600@yahoo.com.mx','Antonio','Davila','Gonzalez','123','adavilag0600@yahoo.com.mx',' 525529381311','qwer')
