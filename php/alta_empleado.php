@@ -11,7 +11,10 @@ $apMeterno = $_POST['maternoEmpleado'];
 $nss = $_POST['empleadoNSS'];
 $telefono = $_POST['empleadoTelefono'];
 
-$sql = "INSERT INTO Empleado (idEmpleado,nombre,apPaterno,apMaterno,NSS,email,telefono,password) VALUES ('$email','$nombre','$apPeterno','$apMeterno','$nss','$email','$telefono','$password')";
+$result = mysql_query("SELECT COUNT(*) FROM sakila.Empleado");
+$id = mysql_result($result, 0);
+
+$sql = "INSERT INTO Empleado (idEmpleado,nombre,apPaterno,apMaterno,NSS,email,telefono,password) VALUES ('$id','$nombre','$apPeterno','$apMeterno','$nss','$email','$telefono','$password')";
 
 $res = mysql_query($sql);
 
