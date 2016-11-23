@@ -42,17 +42,37 @@
 			while($row = mysqli_fetch_array($query)){
 				?>
 				<tr>
-          <form>
-					<td><input size="5" value="<?php echo $row['idProducto'];?>" class="form-control"></td>
+					<td><input id="idProducto<?php echo $row['idProducto']?>" size="5" value="<?php echo $row['idProducto'];?>" class="form-control" disabled></td>
 					<td><input size="10" value="<?php echo $row['nombre'];?>" class="form-control"></td>
 					<td>$<input size="5" value="<?php echo $row['precio'];?>" class="form-control">MXN</td>
 					<td><input size="5" value="<?php echo $row['descripcion'];?>" class="form-control"></td>
 					<td><?php echo '<img src="data:image/jpeg;base64,'.base64_encode($row['foto']).'" width="150" height="150"/>'?></td>
           <td><input size="5" value="<?php echo $row['cantidad'];?>" class="form-control"></td>
-          <td><input type="submit" class="btn btn-primary" value="Actualizar"> <input type="reset" class="btn btn-default" value="Borrar" class="form-control"></td>
-          </form>
+          <td><input id="btn_borrar_<?php echo $row['idProducto']?>" type="submit" class="btn btn-primary" value="Borrar"></td>
 				</tr>
 				<?php
+
+        echo '<script>';
+        echo '$("#btn_borrar_';echo $row['idProducto'];echo '").click(function() {';
+//        echo 'alert("';echo $row['idProducto'];echo '");';
+        echo 'var idProducto = $("input#idProducto';echo $row['idProducto'];echo '").val();';
+        echo 'var dataString = "idProducto=" + idProducto;';
+        echo '$.ajax({';
+        echo 'type: "POST",';
+        echo 'url: "php/borrar_producto.php",';
+        echo 'data: dataString,';
+        echo 'success: function() {';
+        echo '$(\'#borrar_form\').html("<div id=\'message\'></div>");';
+        echo '$(\'#message\').html("<h2>El producto ha sido borrado correctamente!</h2>")';
+        echo '.hide()';
+        echo '.fadeIn(1500, function() {';
+        echo '$(\'#messasge\').append("<a href=\'index.php?action=see\'></a>");';
+        echo '});';
+        echo '}';
+        echo '});';
+        echo 'return false;';
+        echo '});';
+        echo '</script>';
 			}
 			?>
 			</tbody>

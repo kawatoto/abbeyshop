@@ -1,1 +1,1 @@
-INSERT INTO Empleado (idEmpleado,nombre,apPaterno,apMaterno,NSS,email,telefono,password) VALUES ('3','Antonio de Jesus','Davila','Sanchez','1234567','adavilag@tibco.com',' 525529381311','poiu')
+INSERT INTO Producto (idProducto,nombre,precio,descripcion,cantidad,Clasificacion_idClasificacion,Empleado_idEmpleado) VALUES ('14','adfñslfk','123','dslfj','12',00003,00001)

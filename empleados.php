@@ -95,7 +95,7 @@
                             <tr>
                         <form class="form-inline" id="datosAlta">
                             <td>
-                              <input size="5" value="" id="id" class="form-control" placeholder="ID">
+                              <input size="5" value="" id="id" class="form-control" placeholder="ID" disabled>
                           </td>
                             <td>
                               <input size="7" value="" id="nombre" class="form-control" placeholder="Nombre">
@@ -123,7 +123,10 @@
 
                   <div id="register_form"></div>
                         <div id="catalogo" class="text-center"></div>
+                        <div id="borrar_form"></div>
+                        <form id="catalogo_productos">
                         <div class="catalogo_div"></div>
+                        </form>
                         <!-- Datos ajax Final -->
                     </div>
                     <div id="menu2" class="tab-pane fade">
@@ -402,11 +405,12 @@
                         $("#perfil").html("");
                     }
                 })
+
                 //Aquí puedo ingresar la otra funcion
                 $("#alta_producto_btn").click(function() {
 		                //Obtenemos el valor del campo nombre
 
-		                  var id = $("input#id").val();
+		                  //var id = $("input#id").val();
                       var nombre = $("input#nombre").val();
                       var precio = $("input#precio").val();
                       var descripcion = $("input#descripcion").val();
@@ -414,11 +418,11 @@
 
                       var cantidad = $("input#cantidad").val();
 		                    //Validamos el campo nombre, simplemente miramos que no esté vacío
-		                      if (id == "") {
-			                      $("label#name_error").show();
-			                      $("input#name").focus();
-			                      return false;
-		                      }
+		                      //if (id == "") {
+			                      //$("label#name_error").show();
+			                      //$("input#name").focus();
+			                      //return false;
+		                      //}
 
                           if (nombre == "") {
 			                      $("label#name_error").show();
@@ -454,7 +458,7 @@
                           var foto = imagen.match(/[-_\w]+[.][\w]+$/i)[0];
                           //alert(foto); //compramos-empresa-de-cualquier-tipo.jpg
 
-                          var dataString = 'id=' + id + '&nombre=' + nombre + '&precio=' + precio + '&descripcion=' + descripcion + '&cantidad=' + cantidad + '&foto=' + foto;
+                          var dataString = 'nombre=' + nombre + '&precio=' + precio + '&descripcion=' + descripcion + '&cantidad=' + cantidad + '&foto=' + foto;
 
 		                      $.ajax({
                             type: "POST",
@@ -465,7 +469,7 @@
                               $('#message').html("<h2>Tus datos han sido guardados correctamente!</h2>")
                               .hide()
                               .fadeIn(1500, function() {
-                                $('#messagse').append("<a href='index.php?action=see'>Ver usuarios registrados</a>");
+                                $('#message').append("<a href='empleados.php'>Ver cambios</a>");
                               });
                             }
                           });
@@ -558,7 +562,7 @@
                       $('#message').html("<h2>El empleado ha sido dado de alta correctamente!</h2>")
                       .hide()
                       .fadeIn(1500, function() {
-                        $('#messasge').append("<a href='index.php?action=see'>Ver usuarios registrados</a>");
+                        $('#messasge').append("<a href='empleados.php'>Ver cambios</a>");
                       });
                     }
                   });
@@ -566,8 +570,6 @@
                 });
         //Aquí termina la otra funcion
         </script>
-
-
         <!-- Plugin JavaScript -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
         <script src="vendor/scrollreveal/scrollreveal.min.js"></script>
