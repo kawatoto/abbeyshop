@@ -494,14 +494,14 @@
           $("label#telefono_error").hide();
           $("label#passvacio_error").hide();
             //Obtenemos el valor del campo nombre
-              var email = $("input#emailEmpleado").val();
-              var password = $("input#passwordEmpleado").val();
-              var password2 = $("input#password2").val();
-              var nombre = $("input#nombreEmpleado").val();
-              var apPaternoEmpleado = $("input#empleadoApPaterno").val();
-              var apMaternoEmpleado = $("input#empleadoApMaterno").val();
-              var nss = $("input#empleadoNSS").val();
-              var telefono = $("input#empleadoTelefono").val();
+              var email = $("input#emailEmpleado_buscar").val();
+              var password = $("input#passwordEmpleado_buscar").val();
+              var password2 = $("input#password2_buscar").val();
+              var nombre = $("input#nombreEmpleado_buscar").val();
+              var apPaternoEmpleado = $("input#empleadoApPaterno_buscar").val();
+              var apMaternoEmpleado = $("input#empleadoApMaterno_buscar").val();
+              var nss = $("input#empleadoNSS_buscar").val();
+              var telefono = $("input#empleadoTelefono_buscar").val();
 
                 //Validamos el campo nombre, simplemente miramos que no esté vacío
                   if (email == "") {
