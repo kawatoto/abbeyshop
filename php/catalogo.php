@@ -78,7 +78,7 @@
 			</tbody>
 		</table>
 		<div class="table-pagination pull-right">
-			<?php echo paginate($reload, $page, $total_pages, $adjacents);?>
+			<?php echo paginate(true, $page, $total_pages, $adjacents);?>
 		</div>
 
 			<?php
