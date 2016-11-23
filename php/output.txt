@@ -1,1 +1,1 @@
-INSERT INTO Producto (idProducto,nombre,precio,descripcion,cantidad,Clasificacion_idClasificacion,Empleado_idEmpleado) VALUES ('14','adfñslfk','123','dslfj','12',00003,00001)
+["4","Ivan","Davila","Gonzalez","0987654","dagri46@hotmail.com","456787623","onepiece"]

@@ -208,16 +208,18 @@
                     <div id="menu3" class="tab-pane fade">
                         <h3>Empleados</h3>
                         </br>
-                        <form class="form-inline">
+                        <form class="form-inline" id="Empleado_form">
                             <div class="form-group">
                                 <label class="control-label col-xs-3">NSS</label>
                                 <div class="col-xs-9">
-                                    <input type="email" class="form-control" id="buscarUsuario" placeholder="">
+                                    <input type="text" class="form-control" id="nss_buscarUsuario" placeholder="">
+                                    <label id="nss_buscar_error">Por favor ingresa el NSS</label>
+                                    <div id="mostrar"></div>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="col-xs-offset-3 col-xs-6">
-                                    <input type="submit" class="btn btn-primary" value="Buscar">
+                                    <input type="submit" class="btn btn-primary" id="btn_buscar_empleado" value="Buscar"/>
                                 </div>
                             </div>
                         </form>
@@ -227,14 +229,14 @@
                             <div class="form-group">
                                 <label class="control-label col-xs-3">Email:</label>
                                 <div class="col-xs-9">
-                                    <input type="email" class="form-control" id="emailEmpleado" placeholder="Email">
+                                    <input type="email" class="form-control" id="emailEmpleado_buscar" placeholder="Email">
                                     <label id="email_error">Ingresa un email</label>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="control-label col-xs-3">Password:</label>
                                 <div class="col-xs-9">
-                                    <input type="password" class="form-control" id="passwordEmpleado" placeholder="Password">
+                                    <input type="password" class="form-control" id="passwordEmpleado_buscar" placeholder="Password">
                                     <label id="passvacio_error">Por favor ingresa una contraseña</label>
                                     <label id="password_error">El password no coincide</label>
                                 </div>
@@ -242,42 +244,42 @@
                             <div class="form-group">
                                 <label class="control-label col-xs-3">Confirmar Password:</label>
                                 <div class="col-xs-9">
-                                    <input type="password" class="form-control" id="password2" placeholder="Confirmar Password">
+                                    <input type="password" class="form-control" id="password2_buscar" placeholder="Confirmar Password">
                                     <label id="password_error">El password no coincide</label>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="control-label col-xs-3">Nombre:</label>
                                 <div class="col-xs-9">
-                                    <input type="text" class="form-control" id="nombreEmpleado" placeholder="Nombre">
+                                    <input type="text" class="form-control" id="nombreEmpleado_buscar" placeholder="Nombre">
                                     <label id="nombre_error">Ingresa el nombre</label>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="control-label col-xs-3">Apellido Paterno:</label>
                                 <div class="col-xs-9">
-                                    <input type="text" class="form-control" id="empleadoApPaterno" placeholder="Apellido Paterno">
+                                    <input type="text" class="form-control" id="empleadoApPaterno_buscar" placeholder="Apellido Paterno">
                                     <label id="apPaterno_error">Ingresa el apellido paterno</label>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="control-label col-xs-3">Apellido Materno:</label>
                                 <div class="col-xs-9">
-                                    <input type="text" class="form-control" id="empleadoApMaterno" placeholder="Apellido Materno">
+                                    <input type="text" class="form-control" id="empleadoApMaterno_buscar" placeholder="Apellido Materno">
                                     <label id="apMaterno_error">Ingresa el apellido materno</label>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="control-label col-xs-3">NSS:</label>
                                 <div class="col-xs-9">
-                                    <input type="text" class="form-control" id="empleadoNSS" placeholder="Número de Seguro Social">
+                                    <input type="text" class="form-control" id="empleadoNSS_buscar" placeholder="Número de Seguro Social">
                                     <label id="nss_error">Ingresa el Número de Seguro Social</label>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="control-label col-xs-3">Telefono:</label>
                                 <div class="col-xs-9">
-                                    <input type="tel" class="form-control" id="empleadoTelefono" placeholder="Teléfono">
+                                    <input type="tel" class="form-control" id="empleadoTelefono_buscar" placeholder="Teléfono">
                                     <label id="telefono_error">Ingresa un teléfono</label>
                                 </div>
                             </div>
@@ -285,7 +287,7 @@
                             <div class="form-group">
                                 <div class="col-xs-offset-3 col-xs-6">
                                     <input type="submit" class="btn btn-primary" value="Dar de alta" id="alta_empleado_btn">
-                                    <input type="reset" class="btn btn-default" value="Limpiar">
+                                    <input type="reset" class="btn btn-default" value="Limpiar" id="limpiar_empleado_btn">
                                 </div>
                             </div>
                         </form>
@@ -367,6 +369,7 @@
                 $("label#nss_error").hide();
                 $("label#telefono_error").hide();
                 $("label#passvacio_error").hide();
+                $("label#nss_buscar_error").hide();
             });
 
             function catalogo(page) {
@@ -568,6 +571,60 @@
                   });
                   return false;
                 });
+        //Aquí termina la otra funcion
+        </script>
+        <script>
+        //Aquí puedo ingresar la otra funcion
+        $("#btn_buscar_empleado").click(function() {
+                $("label#nss_buscar_error").hide();
+                var nss = $("input#nss_buscarUsuario").val();
+
+                //Validamos el campo nombre, simplemente miramos que no esté vacío
+                  if (nss == "") {
+                    $("label#nss_buscar_error").show();
+                    $("input#nss_buscar_error").focus();
+                    return false;
+                  }
+
+                  var dataString = 'nss=' + nss;
+                  //alert (dataString)
+                  $.ajax({
+                    type: "POST",
+                    url: "php/buscar_empleado.php",
+                    data: dataString,
+                    dataType: 'json',
+                    success: function(data) {
+                      var id = data[0];              //get id
+                      var nombre = data[1];
+                      var apPaterno = data[2];
+                      var apMaterno = data[3];
+                      var nss = data[4];
+                      var email = data[5];
+                      var telefono = data[6];
+                      var password = data[7];
+                      $("#nombreEmpleado_buscar").val(nombre);
+                      $("#emailEmpleado_buscar").val(email);
+                      $("#empleadoApPaterno_buscar").val(apPaterno);
+                      $("#empleadoApMaterno_buscar").val(apMaterno);
+                      $("#passwordEmpleado_buscar").val(password);
+                      $("#password2_buscar").val(password);
+                      $("#empleadoNSS_buscar").val(nss);
+                      $("#empleadoTelefono_buscar").val(telefono);
+                      $("#alta_empleado_btn").prop('disabled', true);
+                      $('#messasge').html("").hide().fadeIn(1500, function() {
+                        $('#messasge').append("<a href='empleados.php'>Ver cambios</a>");
+                      });
+                    }
+                  });
+                  return false;
+                });
+        //Aquí termina la otra funcion
+        </script>
+        <script>
+        //Aquí puedo ingresar la otra funcion
+        $("#limpiar_empleado_btn").click(function() {
+          $("#alta_empleado_btn").prop('disabled', false);
+        });
         //Aquí termina la otra funcion
         </script>
         <!-- Plugin JavaScript -->
