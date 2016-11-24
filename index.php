@@ -161,10 +161,10 @@
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
                                 <div class="project-category text-faded">
-                                    Category
+                                    Calidad
                                 </div>
                                 <div class="project-name">
-                                    Project Name
+                                    Productos hecho con la mejor calidad y un estricto control.
                                 </div>
                             </div>
                         </div>
@@ -176,10 +176,10 @@
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
                                 <div class="project-category text-faded">
-                                    Category
+                                    Excelencia
                                 </div>
                                 <div class="project-name">
-                                    Project Name
+                                    Todo, desde el encargo hasta el disfrute es excelente.
                                 </div>
                             </div>
                         </div>
@@ -191,10 +191,10 @@
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
                                 <div class="project-category text-faded">
-                                    Category
+                                    Conciencia Social
                                 </div>
                                 <div class="project-name">
-                                    Project Name
+                                    Buscamos apoyar a las comunidades más necesitadas.
                                 </div>
                             </div>
                         </div>
@@ -206,10 +206,10 @@
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
                                 <div class="project-category text-faded">
-                                    Category
+                                    Exaltando a México
                                 </div>
                                 <div class="project-name">
-                                    Project Name
+                                    Mostrando la belleza de las artesanías nacionales que tenemos.
                                 </div>
                             </div>
                         </div>
@@ -221,10 +221,10 @@
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
                                 <div class="project-category text-faded">
-                                    Category
+                                    Trabajo a mano
                                 </div>
                                 <div class="project-name">
-                                    Project Name
+                                    Todo es detallado directamente a mano, por lo que tendrás un producto único.
                                 </div>
                             </div>
                         </div>
@@ -236,10 +236,10 @@
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
                                 <div class="project-category text-faded">
-                                    Category
+                                    Alma y corazón
                                 </div>
                                 <div class="project-name">
-                                    Project Name
+                                    Hecho no sólo con herramientas y tiempo, sino con el alma y el corazón de nuestros artesanos.
                                 </div>
                             </div>
                         </div>
