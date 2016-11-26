@@ -11,8 +11,11 @@ $apMeterno = $_POST['maternoEmpleado'];
 $nss = $_POST['empleadoNSS'];
 $telefono = $_POST['empleadoTelefono'];
 
-$result = mysql_query("SELECT COUNT(*) FROM sakila.Empleado");
-$id = mysql_result($result, 0);
+$result = mysql_query('SELECT MAX(idEmpleado) FROM sakila.Empleado');
+$row = mysql_fetch_row($result);
+$id = $row[0];
+$id = (int) $id + 1;
+
 
 $sql = "INSERT INTO Empleado (idEmpleado,nombre,apPaterno,apMaterno,NSS,email,telefono,password) VALUES ('$id','$nombre','$apPeterno','$apMeterno','$nss','$email','$telefono','$password')";
 

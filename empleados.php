@@ -69,7 +69,7 @@
             </div>
         </aside>
         <div class="container">
-            <h2>Control de empleados</h2>
+            <h2>Administración de la empresa</h2>
             <p>Aquí podemos administrar los datos de empleados, inventario y clientes.</p>
             <ul class="nav nav-tabs">
                 <li class="active"><a href="#home">Mi perfil</a></li>
@@ -555,7 +555,7 @@
 
 
                   var dataString = 'emailEmpleado=' + email + '&passwordEmpleado=' + password + '&nombreEmpleado=' + nombre + '&paternoEmpleado=' + apPaternoEmpleado + '&maternoEmpleado=' + apMaternoEmpleado + '&empleadoNSS=' + nss + '&empleadoTelefono=' + telefono;
-
+                  //alert(dataString)
                   $.ajax({
                     type: "POST",
                     url: "php/alta_empleado.php",
@@ -612,7 +612,7 @@
                       $("#empleadoTelefono_buscar").val(telefono);
                       $("#alta_empleado_btn").prop('disabled', true);
                       $('#messasge').html("").hide().fadeIn(1500, function() {
-                        $('#messasge').append("<a href='empleados.php'>Ver cambios</a>");
+                      $('#messasge').append("<a href='empleados.php'>Ver cambios</a>");
                       });
                     }
                   });
@@ -624,6 +624,7 @@
         //Aquí puedo ingresar la otra funcion
         $("#limpiar_empleado_btn").click(function() {
           $("#alta_empleado_btn").prop('disabled', false);
+          $("#empleadoNSS_buscar").val("");
         });
         //Aquí termina la otra funcion
         </script>
